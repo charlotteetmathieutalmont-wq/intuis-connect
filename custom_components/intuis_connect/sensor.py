@@ -120,6 +120,8 @@ class IntuisTemperatureSensor(IntuisSensor):
             "temperature",
         )
         self._attr_icon = "mdi:thermometer"
+        # treat it like a measurement (so it will chart properly)
+        self._attr_state_class = SensorStateClass.MEASUREMENT
 
     @property
     def native_value(self) -> float:
